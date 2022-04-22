@@ -248,7 +248,7 @@ export async function getServerSideProps(context) {
     const res = await fetch(url, option);
     const data = await res.json();
 
-    console.log(data);
+    
     if (data.name) {
       return {
         redirect: {

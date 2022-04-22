@@ -69,9 +69,9 @@ export default function Create() {
     const payload = {name:name , weekPlan: weekPlan}
     
     axios.post("/api/create",  payload, {headers:{'Content-Type': 'application/json'}}, {withCredentials: true})
-    .then((r)=>{console.log(r);
+    .then((r)=>{
        onClose()
-      router.push("/MyPlan")})
+      router.push("/myPlan")})
   }
 
   const addItem = (value) => {

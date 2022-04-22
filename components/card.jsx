@@ -16,9 +16,9 @@ export default function Card(props){
     const payload = {id:props.id}
     
     axios.post("/api/setPlan",  payload, {headers:{'Content-Type': 'application/json'}}, {withCredentials: true})
-    .then((r)=>{console.log(r);
+    .then((r)=>{
       
-      router.push("/MyPlan")
+      router.push("/myPlan")
     })
   }
    
