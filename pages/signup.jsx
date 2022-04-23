@@ -66,8 +66,8 @@ export default function SignUp() {
           <Link href="/">
             <Image width={70} src="/BlogLogo.png" alt="logo" />
           </Link>
-          <h1 className="logo">Fitrack</h1>
-          <h1 className="loginText">Sign up to Fitrack</h1>
+          <h2 className="logo">Fitrack</h2>
+          <h2 className="loginText">Sign up to Fitrack</h2>
           <Input
             placeholder="Username"
             _placeholder={{ opacity: 0.5, color: "black" }}

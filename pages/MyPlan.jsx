@@ -244,7 +244,16 @@ export async function getServerSideProps(context) {
       },
     };
 
-    const url = process.env.URL+"/api/user"
+    let url=""
+    if(false){
+      
+      url= "http://localhost:3000/api/user"
+
+    } else {
+      url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
+    }
+
+
     const res = await fetch(url, option);
     const data = await res.json();
 

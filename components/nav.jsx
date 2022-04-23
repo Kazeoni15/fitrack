@@ -55,17 +55,17 @@ export default function Nav(props) {
           </Link>
         </Box>
         <Box p="1rem">
-          <h1 className="nav-links">
+          <h2 className="nav-links">
             <Link href="/">Fitrack</Link>
-          </h1>
+          </h2>
         </Box>
         <Flex display={["none", "none", "flex", "flex"]}>
           {loggedOut.map((i) => {
             return (
               <Box p="1rem" key={i.key}>
-                <h1 className="nav-links">
+                <h2 className="nav-links">
                   <Link href={i.link}>{i.name}</Link>
-                </h1>
+                </h2>
               </Box>
             );
           })}
@@ -126,17 +126,17 @@ export default function Nav(props) {
               />
             </Flex>
             <Flex p="1rem" flexDir="column" align="center">
-              <h1 className="nav-links">
+              <h2 className="nav-links">
                 <Link href="/">Fitrack</Link>
-              </h1>
+              </h2>
             </Flex>
             <Flex flexDir="column" align="center">
               {loggedOut.map((i) => {
                 return (
                   <Box p="1rem" key={i.key}>
-                    <h1 className="nav-links">
+                    <h2 className="nav-links">
                       <Link href={i.link}>{i.name}</Link>
-                    </h1>
+                    </h2>
                   </Box>
                 );
               })}
@@ -166,17 +166,17 @@ export default function Nav(props) {
           </Link>
         </Box>
         <Box p="1rem">
-          <h1 className="nav-links">
+          <h2 className="nav-links">
             <Link href="/">Fitrack</Link>
-          </h1>
+          </h2>
         </Box>
         <Flex display={["none", "none", "flex", "flex"]}>
           {loggedIn.map((i) => {
             return (
               <Box p="1rem" key={i.key}>
-                <h1 className="nav-links">
+                <h2 className="nav-links">
                   <Link href={i.link}>{i.name}</Link>
-                </h1>
+                </h2>
               </Box>
             );
           })}
@@ -251,17 +251,17 @@ export default function Nav(props) {
               />
             </Flex>
             <Flex p="1rem" flexDir="column" align="center">
-              <h1 className="nav-links">
+              <h2 className="nav-links">
                 <Link href="/">Fitrack</Link>
-              </h1>
+              </h2>
             </Flex>
             <Flex flexDir="column" align="center">
               {loggedIn.map((i) => {
                 return (
                   <Box p="1rem" key={i.key}>
-                    <h1 className="nav-links">
+                    <h2 className="nav-links">
                       <Link href={i.link}>{i.name}</Link>
-                    </h1>
+                    </h2>
                   </Box>
                 );
               })}

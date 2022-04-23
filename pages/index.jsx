@@ -79,7 +79,7 @@ export default function Home(props) {
             <ListItem>
                 <Button
               as = "a"
-              href="/MyPlan"
+              href="/myPlan"
               colorScheme="teal"
               bg="linear-gradient(to top right, #99ccff 0%, #009933 100%)"
               size="md"
@@ -100,6 +100,8 @@ export default function Home(props) {
 export async function getServerSideProps(context) {
   const cookie = context.req.cookies.jwt;
 
+  
+
   if (cookie) {
     const option = {
       method: "POST",
@@ -109,7 +111,16 @@ export async function getServerSideProps(context) {
       },
     };
 
-    const url = process.env.URL+"/api/user"
+    const envi = true
+    let url=""
+    if(false){
+      
+      url= "http://localhost:3000/api/user"
+
+    } else {
+      url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
+    }
+    
     
     const res = await fetch(url, option);
   

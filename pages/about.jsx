@@ -10,12 +10,12 @@ export default function About(props){
         <Container pt="3rem">
         <Heading>Hi, I am Pranit, a web developer</Heading>
         <br/>
-            <Text> and this is a personal project I have created with Next.js This is a Full Stack application with server side rendering for optimal performance. This application has a login feature which uses cookies. </Text>
+            <Text> and this is a personal project I have created. This website is rendered on the server-side for optimal TTI (Time-to-interactive). I have used Next.js with a REST API that is connected to a MongoDB cluster for this web app. </Text>
             
                 <br/>
             <Divider/>
             <br/>
-            <Text> This application is a workout tracking app. You can create an account and create your own plans or follow ones created by other users. </Text>
+            <Text> This is a workout tracking app. You can create an account and create your own plans or follow ones created by other users. </Text>
             <br/>
             <Divider/>
             <br/>

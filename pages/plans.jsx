@@ -45,9 +45,9 @@ export async function getServerSideProps(context) {
       },
     };
 
-    const url = process.env.URL+"/api/plans"
+    
 
-    const res = await fetch(url, option);
+    const res = await fetch("https://workout-tracker-kazeoni15.vercel.app/api/plans", option);
     const data = await res.json();
 
   

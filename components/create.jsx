@@ -158,7 +158,7 @@ export default function Create() {
                     {weekPlan[i.id].map((j)=>{
                       
                       return (<InputGroup  alignItems={"center"} key={j}>
-                        <Text mb="2rem" >{j}</Text>
+                        <Text mb="1rem" >{j}</Text>
                         
                       </InputGroup> )
                     })}
@@ -190,14 +190,14 @@ export default function Create() {
                 );
               })}
             </Accordion>
-          </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
+            <Button variant="outline" m={"3rem"} onClick={onClose}>
               Cancel
             </Button>
             <Button onClick={save} colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          </DrawerBody>
+
+          
         </DrawerContent>
       </Drawer>
 
