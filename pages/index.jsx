@@ -27,7 +27,7 @@ export default function Home(props) {
       <motion.div>
         <div className="text">
           <Text fontSize={["20px", "30px", "50px", "50px"]}>
-            Track your workouts with Fitrack
+            <h1>Track your workouts with Fitrack</h1>
           </Text>
           <Container p="1rem">
             <Divider />

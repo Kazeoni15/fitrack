@@ -8,7 +8,7 @@ export default function About(props){
         <Nav user={props.message}/>
 
         <Container pt="3rem">
-        <Heading>Hi, I am Pranit, a web developer</Heading>
+        <Heading><h1>Hi, I am Pranit, a web developer</h1></Heading>
         <br/>
             <Text> and this is a personal project I have created. This website is rendered on the server-side for optimal TTI (Time-to-interactive). I have used Next.js with a REST API that is connected to a MongoDB cluster for this web app. </Text>
             
