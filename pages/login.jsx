@@ -39,7 +39,8 @@ export default function LogIn() {
         
         onOpen()
       } else{
-        console.log(res)
+        router.push("/MyPlan")
+        
       }
 
      
