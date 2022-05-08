@@ -248,7 +248,7 @@ export async function getServerSideProps(context) {
       },
     };
 
-    const url="https://workout-tracker-kazeoni15.vercel.app/api/user"
+    const url="https://workout-tracker-kazeoni15.vercel.app/api/user" 
 
     const res = await fetch(url, option);
     const data = await res.json();
