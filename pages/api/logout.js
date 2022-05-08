@@ -7,15 +7,7 @@ export default async function handler(req, res) {
   
 // if the api method is GET send an empty cookie that is expired
   if (method == "GET") {
-    res.setHeader(
-      "Set-Cookie",
-      cookie.serialize("jwt", "", {
-       
-        expires: new Date(0),
-        
-        path: "/",
-      })
-    );
+    res.setHeader("Set-Cookie", cookie.serialize("jwt", "", {maxAge:1}))
     res.status(200).send("logged out");
   }
 }
