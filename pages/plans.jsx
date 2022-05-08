@@ -10,7 +10,7 @@ import Nav from "../components/nav";
 
 export default function Plans(props) {
 const plans = props.data.docs
-const cls = ["card card-1", "card card-2","card card-3","card card-4","card card-5"]
+
   
   return (
     <>
@@ -23,7 +23,7 @@ const cls = ["card card-1", "card card-2","card card-3","card card-4","card card
 
         {plans.map((i)=>{
           return(
-            <Card cls={cls[Math.floor(Math.random()*cls.length)]} id={i._id} key={i._id} title={i.Title} createdBy={i.createdBy} mon={i.Mon} tue={i.Tue} wed={i.Wed} thu={i.Thu} fri={i.Fri} sat={i.Sat} sun={i.Sun} />
+            <Card cls={"card"} id={i._id} key={i._id} title={i.Title} createdBy={i.createdBy} mon={i.Mon} tue={i.Tue} wed={i.Wed} thu={i.Thu} fri={i.Fri} sat={i.Sat} sun={i.Sun} />
           )
         })}
       </Container> 
@@ -36,6 +36,8 @@ const cls = ["card card-1", "card card-2","card card-3","card card-4","card card
 
 export async function getServerSideProps(context) {
   const cookie = context.req.cookies.jwt;
+
+  
 
   if (cookie) {
     const option = {
@@ -53,5 +55,15 @@ export async function getServerSideProps(context) {
   
     
     return {props: { message: "true", data: data }}
+}
+
+else if(!cookie) {
+  return {
+    redirect: {
+      permanent: false,
+      destination: "/login",
+    },
+    props: {},
+  };
 }
 }

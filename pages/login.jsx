@@ -7,7 +7,6 @@ import {
   Container,
   Heading,
   Link,
-  Image,
   Flex,
   Modal,
   ModalOverlay,
@@ -20,7 +19,10 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Image from "next/image"
+import logo from "../public/BlogLogo.png"
 
+// login page
 
 export default function LogIn() {
   const [username, setUsername] = useState("");
@@ -30,6 +32,7 @@ export default function LogIn() {
 
 
   const submit = async () => {
+    // axios post request for login auth
     await axios.post("/api/login", {username: username, password: password}, {withCredentials: true})
     .then((res)=>{
       if(res.data=="auth failed"){
@@ -50,7 +53,7 @@ export default function LogIn() {
       <Container mt="5rem">
         <VStack spacing={4}>
         <Link href="/">
-            <Image width={70} src="/BlogLogo.png" alt="logo" />
+            <Image width="100" height="100" src={logo} alt="logo" />
           </Link>
           <h2 className="logo">Fitrack</h2>
           <h2 className="loginText">Log in to Fitrack</h2>
@@ -59,10 +62,10 @@ export default function LogIn() {
             _placeholder={{ opacity: 0.5, color: "black" }}
             required
             variant="flushed"
-            type={"text"}
+            type={"username"}
             value={username}
             onChange={(e) => {
-              setUsername(e.target.value);
+              setUsername(e.target.value.trim());
             }}
           />
           <Input
@@ -73,7 +76,7 @@ export default function LogIn() {
             type="password"
             value={password}
             onChange={(e) => {
-              setPass(e.target.value);
+              setPass(e.target.value.trim());
             }}
           />
           <Button
@@ -100,6 +103,8 @@ export default function LogIn() {
         isOpen={isOpen}
         motionPreset="slideInBottom"
       >
+
+      {/* Modal from chakra ui */}
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Error!</ModalHeader>

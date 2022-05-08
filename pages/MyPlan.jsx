@@ -49,9 +49,10 @@ export default function MyPlan(props) {
 
     content = (
       <Container>
-        <Text className="userpage letter-spacing4">{title}</Text>
+      <Container className="card">
+      <Text className="userpage letter-spacing4">{title}</Text>
         
-        <Accordion allowToggle>
+        <Accordion allowToggle >
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -208,6 +209,9 @@ export default function MyPlan(props) {
           </AccordionItem>
         </Accordion>
         <Text className="userpage letter-spacing4">Plan by {creator} </Text>
+
+      </Container>
+        
         <div className="userpage">
       <Create />
       </div>
@@ -244,15 +248,7 @@ export async function getServerSideProps(context) {
       },
     };
 
-    let url=""
-    if(false){
-      
-      url= "http://localhost:3000/api/user"
-
-    } else {
-      url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
-    }
-
+    const url="https://workout-tracker-kazeoni15.vercel.app/api/user"
 
     const res = await fetch(url, option);
     const data = await res.json();

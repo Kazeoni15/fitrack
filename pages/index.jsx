@@ -5,7 +5,6 @@ import {
   Flex,
   Container,
   Text,
-  Image,
   Stack,
   Button,
   Divider,
@@ -15,19 +14,23 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-
+import Image from "next/image"
 import { motion } from "framer-motion";
+import pushups from "../public/pushups.svg"
+import tracker from "../public/tracker.svg"
+import cover from "../public/cover.jpg"
 
 export default function Home(props) {
   return (
     <>
       <HeadHtml content="main page" />
       <Nav user={props.message} />
-      <Image src="/cover.jpg" width="100%" alt="Cover photo" />
-      <motion.div>
+      <Image priority  src={cover} layout="responsive" alt="Cover photo" />
+     
         <div className="text">
+        {/* change fontsize for different breakpoints */}
           <Text fontSize={["20px", "30px", "50px", "50px"]}>
-            <h1>Track your workouts with Fitrack</h1>
+            Track your workouts with Fitrack
           </Text>
           <Container p="1rem">
             <Divider />
@@ -46,9 +49,9 @@ export default function Home(props) {
             </Button>
           
         </div>
-      </motion.div>
+    
 
-      <Container maxW="100%" id="information">
+      <Container pb="5rem" maxW="100%" id="information">
         <Text
           pt="2rem"
           pb="3rem"
@@ -58,7 +61,7 @@ export default function Home(props) {
           Features
         </Text>
         <div className="grid-container">
-          <Image className="grid-item" src="pushups.svg" alt="tracker" />
+          <Image className="grid-item" layout="responsive" src={pushups} alt="tracker" />
           <List className="grid-item" spacing={3}>
             <ListItem fontSize={["15px", "22px", "25px", "30px"]}>
               <ListIcon as={CheckIcon} color="green.500" />
@@ -100,7 +103,7 @@ export default function Home(props) {
 export async function getServerSideProps(context) {
   const cookie = context.req.cookies.jwt;
 
-  
+  // if cookie exists
 
   if (cookie) {
     const option = {
@@ -111,15 +114,8 @@ export async function getServerSideProps(context) {
       },
     };
 
-    const envi = true
-    let url=""
-    if(false){
-      
-      url= "http://localhost:3000/api/user"
-
-    } else {
-      url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
-    }
+   
+  const url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
     
     
     const res = await fetch(url, option);

@@ -2,13 +2,14 @@ import { Button, Container, Divider, Heading, Text } from "@chakra-ui/react";
 import HeadHtml from "../components/headhtml";
 import Nav from "../components/nav";
 
+// About page 
 export default function About(props){
     return(<>
         <HeadHtml content="About page"/>
         <Nav user={props.message}/>
 
         <Container pt="3rem">
-        <Heading><h1>Hi, I am Pranit, a web developer</h1></Heading>
+        <h1 className="heading_about">Hi, I am Pranit, a web developer</h1>
         <br/>
             <Text> and this is a personal project I have created. This website is rendered on the server-side for optimal TTI (Time-to-interactive). I have used Next.js with a REST API that is connected to a MongoDB cluster for this web app. </Text>
             
@@ -26,7 +27,10 @@ export default function About(props){
 }
 
 export async function getServerSideProps(context) {
+
+    // if the cookie is valid the nav can render the correct version
     const cookie = context.req.cookies.jwt;
+   
   
     if (cookie) {
      

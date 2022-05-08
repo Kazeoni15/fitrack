@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// mongoose schema for plans
 const planSchema = new mongoose.Schema({
     Title: String,
     Mon: Array,

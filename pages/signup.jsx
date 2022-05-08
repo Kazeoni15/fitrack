@@ -74,7 +74,7 @@ export default function SignUp() {
             value={username}
             variant="flushed"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setUsername(e.target.value.trim());
             }}
             required
           />
@@ -85,7 +85,7 @@ export default function SignUp() {
             value={password}
             variant="flushed"
             onChange={(e) => {
-              setPass(e.target.value);
+              setPass(e.target.value.trim());
             }}
             required
           />
@@ -106,7 +106,7 @@ export default function SignUp() {
           </Flex>
         </VStack>
       </Container>
-
+{/* Modal from chakra ui */}
       <Modal
         isCentered
         onClose={onClose}
