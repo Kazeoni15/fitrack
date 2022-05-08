@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     //     path: "/",
     //   })
     // );
-    res.setHeader("Set-Cookie", cookie.serialize("jwt", "", {httpOnly:true, secure: process.env.NODE_ENV !== "development", expires: new Date(0) ,sameSite: "strict", path:"/"}))
-    res.status(200).send("logged out");
+   await res.setHeader("Set-Cookie", cookie.serialize("jwt", "", {httpOnly:true, secure: process.env.NODE_ENV !== "development", expires: new Date(0) ,sameSite: "strict", path:"/"}))
+   await res.status(200).send("logged out");
   }
 }
