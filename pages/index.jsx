@@ -115,7 +115,7 @@ export async function getServerSideProps(context) {
     };
 
    
-  const url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
+  const url= "http://localhost:3000/api/user"
     
     
     const res = await fetch(url, option);
@@ -123,15 +123,7 @@ export async function getServerSideProps(context) {
     const data = await res.json();
 
   
-    if (data.name) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: "/login",
-        },
-        props: {},
-      };
-    } else if (data.userID) {
+    if (data.userID) {
       return { props: { message: "true", data: data } };
     }
   } else {
