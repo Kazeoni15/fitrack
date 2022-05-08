@@ -39,7 +39,7 @@ export default function LogIn() {
         
         onOpen()
       } else{
-        router.push("/")
+        console.log(res)
       }
 
      
