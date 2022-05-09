@@ -55,8 +55,8 @@ export default function Nav(props) {
   };
 
   // logs out the user when clicked the logout button
-  const logOut = () => {
-    fetch("/api/logout", {method: "GET", credentials: 'include'}, )
+  const logOut = async () => {
+   await fetch("/api/logout", {method: "GET", credentials: 'include'}, )
     .then((r) => {
       console.log(r)
       router.push("/login")
