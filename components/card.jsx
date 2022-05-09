@@ -37,7 +37,7 @@ export default function Card(props) {
       )
       .then((r) => {
         // Redirect to myPlan route
-        router.push("/myPlan");
+        router.push("/MyPlan");
       });
   };
 

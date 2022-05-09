@@ -82,7 +82,7 @@ export default function Home(props) {
             <ListItem>
                 <Button
               as = "a"
-              href="/myPlan"
+              href="/MyPlan"
               colorScheme="teal"
               bg="linear-gradient(to top right, #99ccff 0%, #009933 100%)"
               size="md"
