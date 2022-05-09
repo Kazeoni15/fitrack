@@ -128,7 +128,19 @@ export async function getServerSideProps(context) {
       // serves the data 
       return { props: { message: "true", data: data } };
     }
-  } else {
+    if(data.name){
+      return{
+        redirect: {
+          permanent: false,
+          destination: "/signup",
+        },
+        props: {},
+      }
+
+    }
+    
+  } 
+  else {
     // served when no cookie is found 
     return { props: { message: "false" } };
   }

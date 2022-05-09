@@ -32,7 +32,7 @@ export default function MyPlan(props) {
           as="a"
           href="/plans"
           bg={"linear-gradient(to top right, #99ccff 0%, #009933 100%)"}
-          colorScheme="teal"
+          colorScheme="teal" 
         >
           {"Check'em out!"}
         </Button>

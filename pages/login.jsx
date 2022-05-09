@@ -33,11 +33,7 @@ export default function LogIn() {
 
   const submit = async () => {
     // axios post request for login auth
-    axios.defaults.headers = {
-      'Cache-Conrol': 'no-cache',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    }
+    
     await axios.post("/api/login", {username: username, password: password}, {withCredentials: true})
     .then((res)=>{
       // if the auth fails open a modal with the error message
