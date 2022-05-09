@@ -13,8 +13,7 @@ export default async function handler (req, res) {
       path: "/",
     });
 
-    res.setHeader("Set-Cookie", serialised);
-
-    res.status(200).json({ message: "Successfuly logged out!" });
+  await  res.writeHead("Set-Cookie", serialised);
+  await  res.status(200).json({ message: "Successfuly logged out!" });
   
 }

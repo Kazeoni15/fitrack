@@ -58,8 +58,8 @@ export default function Nav(props) {
   const logOut = () => {
     axios.get("/api/logout", {withCredentials: true})
     .then((r) => {
-      console.log(r)
-      // router.push("/login")
+      
+      router.push("/login")
     });
   };
 
