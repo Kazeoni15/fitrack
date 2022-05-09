@@ -2,23 +2,24 @@ import cookie from "cookie";
 
 
 
-export default async function handler(req, res) {
-  const { method } = req;
+export default async function handler (req, res) {
+  
 
+  const jwt = req.headers.token;
 
-  // if the api method is GET
-  if (method == "POST") {
-    // send a cookie to the client
-    res.setHeader(
-      "Set-Cookie",
-      cookie.serialize("jwt", "", {
-        httpOnly: true,
-        secure: process.env.NODE_ENV !== "development",
-        maxAge:-1,
-        sameSite: "strict",
-        path: "/api",
-      })
-    );
-    res.status(200).send("logged out");
+  if (!jwt) {
+    return res.json({ message: "Already logged out" });
+  } else {
+    const serialised = cookie.serialize("jwt", null, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== "development",
+      sameSite: "strict",
+      maxAge: -1,
+      path: "/",
+    });
+
+    res.setHeader("Set-Cookie", serialised);
+
+    res.status(200).json({ message: "Successfuly logged out!" });
   }
 }

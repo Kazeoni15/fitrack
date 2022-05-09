@@ -56,7 +56,7 @@ export default function Nav(props) {
 
   // logs out the user when clicked the logout button
   const logOut = () => {
-    axios.post("/api/logout", {withCredentials: true})
+    axios.get("/api/logout", {withCredentials: true})
     .then((r) => {
       console.log(r)
       // router.push("/login")
