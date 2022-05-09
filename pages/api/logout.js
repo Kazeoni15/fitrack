@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
 
   // if the api method is GET
-  if (method == "GET") {
+  if (method == "POST") {
     // send a cookie to the client
     res.setHeader(
       "Set-Cookie",
