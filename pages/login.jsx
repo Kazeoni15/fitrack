@@ -35,10 +35,12 @@ export default function LogIn() {
     // axios post request for login auth
     await axios.post("/api/login", {username: username, password: password}, {withCredentials: true})
     .then((res)=>{
+      // if the auth fails open a modal with the error message
       if(res.data=="auth failed"){
         
         onOpen()
       } else{
+        // redirect to the profile page
         router.push("/MyPlan")
         
       }

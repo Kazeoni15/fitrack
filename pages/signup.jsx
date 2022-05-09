@@ -40,12 +40,13 @@ export default function SignUp() {
     await axios
       .post("/api/register", { username: username, password: password })
       .then((r)=>{
-        console.log(r)
+        // if user already exists then display modal with message
         if(r.data=="User already exists"){
           setMessage("User already Exists! Try another username")
           onOpen()
     
         } else{
+          // if signup is successful redirect to login page
           router.push("/login")
         }
       })

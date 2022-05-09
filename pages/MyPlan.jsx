@@ -249,13 +249,13 @@ export async function getServerSideProps(context) {
         token: cookie,
       },
     };
-
+// request to the api
     const url="https://workout-tracker-kazeoni15.vercel.app/api/user" 
 
     const res = await fetch(url, option);
     const data = await res.json();
 
-    
+    // if the auth is failed then redirect to login page again
     if (data.name) {
       return {
         redirect: {
@@ -265,6 +265,7 @@ export async function getServerSideProps(context) {
         props: {},
       };
     } else if (data.userID) {
+      // if data is found then serve up the data
       if (data.following.plan === "none") {
         return { props: { message: "true", follow: false, data: data } };
       } else {
@@ -272,6 +273,7 @@ export async function getServerSideProps(context) {
       }
     }
   } else {
+    // redirect to the signup page if no user exists
     return {
       redirect: {
         permanent: false,

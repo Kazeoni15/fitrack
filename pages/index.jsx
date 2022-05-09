@@ -114,6 +114,7 @@ export async function getServerSideProps(context) {
       },
     };
 
+    // making request to the api
    
   const url= "https://workout-tracker-kazeoni15.vercel.app/api/user"
     
@@ -124,9 +125,11 @@ export async function getServerSideProps(context) {
 
   
     if (data.userID) {
+      // serves the data 
       return { props: { message: "true", data: data } };
     }
   } else {
+    // served when no cookie is found 
     return { props: { message: "false" } };
   }
 }

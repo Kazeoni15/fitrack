@@ -1,9 +1,14 @@
 import cookie from "cookie";
 
+
+
 export default async function handler(req, res) {
   const { method } = req;
 
+
+  // if the api method is GET
   if (method == "GET") {
+    // send a cookie to the client
     res.setHeader(
       "Set-Cookie",
       cookie.serialize("jwt", "", {
