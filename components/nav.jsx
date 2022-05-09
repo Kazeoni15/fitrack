@@ -59,7 +59,7 @@ export default function Nav(props) {
     fetch("/api/logout", {method: "GET", credentials: 'include'}, )
     .then((r) => {
       console.log(r)
-      // router.push("/login")
+      router.push("/login")
     });
   };
 
