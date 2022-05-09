@@ -29,13 +29,11 @@ export default async function handler(req, res) {
         bcrypt.compare(req.body.password, doc.password, function (err, result) {
           
           if (!err && result) {
-            const payload = { user: doc.userID };
-            const jwt = sign(payload, process.env.secret_key, {
-              expiresIn: "12h",
-            });
+            const payload = { user: doc.userID, exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30 };
+            const jwt = sign(payload, process.env.secret_key);
 
             // send a cookie to the frontend
-            res.setHeader("Set-Cookie", cookie.serialize("jwt", jwt, {httpOnly:true, secure: process.env.NODE_ENV !== "development", sameSite: "strict", path:"/"}))
+             res.setHeader("Set-Cookie", cookie.serialize("jwt", jwt, {httpOnly:true, secure: process.env.NODE_ENV !== "development", sameSite: "strict", maxAge: 60 * 60 * 24 * 30, path:"/"}))
              res.status(200).send("Success")
             
              
