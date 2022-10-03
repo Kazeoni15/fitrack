@@ -250,10 +250,10 @@ export async function getServerSideProps(context) {
       },
     };
 // request to the api
-    const url="https://workout-tracker-kazeoni15.vercel.app/api/user" 
+    const url="http://localhost:3000/api/user" 
 
     const res = await fetch(url, option);
-    const data = await res.json();
+    const data = await res?.json();
 
     // if the auth is failed then redirect to login page again
     if (data.name) {

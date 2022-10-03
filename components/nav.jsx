@@ -36,7 +36,7 @@ export default function Nav(props) {
   // used when logged in
   let loggedIn = [
     { name: "Plans", link: "/plans", key: 1 },
-    { name: "My plan", link: "/MyPlan", key: 2 },
+    { name: "My plan", link: "/myPlan", key: 2 },
     { name: "About", link: "/about", key: 3 },
   ];
 

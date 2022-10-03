@@ -42,7 +42,7 @@ export default function LogIn() {
         onOpen()
       } else{
         // redirect to the profile page
-        router.push("/MyPlan")
+        router.push("/myPlan")
         
       }
 
