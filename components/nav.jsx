@@ -58,7 +58,7 @@ export default function Nav(props) {
   const logOut = async () => {
    await fetch("/api/logout", {method: "GET", credentials: 'include'}, )
     .then((r) => {
-      console.log(r)
+      // console.log(r)
       router.push("/login")
     });
   };
