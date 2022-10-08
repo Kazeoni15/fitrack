@@ -63,7 +63,7 @@ export async function getServerSideProps(context) {
 
     // make requests to api
     const res = await fetch(
-      "http://localhost:3000/api/plans",
+      "https://workout-tracker-kazeoni15.vercel.app/api/plans",
       option
     );
     const data = await res.json();

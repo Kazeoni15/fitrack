@@ -250,7 +250,7 @@ export async function getServerSideProps(context) {
       },
     };
 // request to the api
-    const url="http://localhost:3000/api/user" 
+    const url="https://workout-tracker-kazeoni15.vercel.app/api/user" 
 
     const res = await fetch(url, option);
     const data = await res?.json();
